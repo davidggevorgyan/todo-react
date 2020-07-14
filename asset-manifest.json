@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/davidggevorgyan/todo-react/static/css/main.eb3ca735.chunk.css",
+    "main.js": "/davidggevorgyan/todo-react/static/js/main.347a1a01.chunk.js",
+    "main.js.map": "/davidggevorgyan/todo-react/static/js/main.347a1a01.chunk.js.map",
+    "runtime-main.js": "/davidggevorgyan/todo-react/static/js/runtime-main.d57a56e6.js",
+    "runtime-main.js.map": "/davidggevorgyan/todo-react/static/js/runtime-main.d57a56e6.js.map",
+    "static/js/2.7adee998.chunk.js": "/davidggevorgyan/todo-react/static/js/2.7adee998.chunk.js",
+    "static/js/2.7adee998.chunk.js.map": "/davidggevorgyan/todo-react/static/js/2.7adee998.chunk.js.map",
+    "index.html": "/davidggevorgyan/todo-react/index.html",
+    "precache-manifest.21c71425f8b7b29623fff25769667df2.js": "/davidggevorgyan/todo-react/precache-manifest.21c71425f8b7b29623fff25769667df2.js",
+    "service-worker.js": "/davidggevorgyan/todo-react/service-worker.js",
+    "static/css/main.eb3ca735.chunk.css.map": "/davidggevorgyan/todo-react/static/css/main.eb3ca735.chunk.css.map",
+    "static/js/2.7adee998.chunk.js.LICENSE.txt": "/davidggevorgyan/todo-react/static/js/2.7adee998.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d57a56e6.js",
+    "static/js/2.7adee998.chunk.js",
+    "static/css/main.eb3ca735.chunk.css",
+    "static/js/main.347a1a01.chunk.js"
+  ]
+}
