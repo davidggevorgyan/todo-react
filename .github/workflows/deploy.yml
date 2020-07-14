@@ -20,6 +20,6 @@ jobs:
       - name: Deploy to GH Pages
         run: |
           git config --global user.email "davidggevorrgyan@gmail.com"
-          git config --global user.name "davidggevorrgyan"
+          git config --global user.name "davidggevorgyan"
           git remote set-url origin https://davidggevorgyan:${{ secrets.ACTIONS_DEPLOY_KEY }}@github.com/davidggevorgyan/todo-react.git
           npm run deploy
