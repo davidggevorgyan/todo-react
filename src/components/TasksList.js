@@ -1,18 +1,20 @@
 import React from 'react';
-import TaskItem from './TaskItem';
+import TaskItem from './TaskItem.js';
 
 export default class TasksList extends React.Component {
+
 	render() {
-		let { tasks, markDoneListener, deleteListener } = this.props;
+		const { tasks, markDoneListener, deleteListener } = this.props;
 		return tasks
-			.filter((task) => !task.isDeleted)
-			.map((task) => (
+			.filter( ( task ) => !task.isDeleted )
+			.map( ( task ) => (
 				<TaskItem
-					key={task.text.slice(0, 5) + task.id}
+					key={task.text.slice( 0, 5 ) + task.id}
 					task={task}
 					markDoneListener={markDoneListener}
 					deleteListener={deleteListener}
 				/>
-			));
+			) );
 	}
+
 }

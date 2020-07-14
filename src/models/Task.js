@@ -1,4 +1,4 @@
-export default function Task(text, id) {
+export default function Task( text, id ) {
 	this.id = id;
 	this.isDone = false;
 	this.isDeleted = false;

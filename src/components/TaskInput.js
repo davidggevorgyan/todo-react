@@ -1,8 +1,11 @@
 import React from 'react';
 
 export default class TaskInput extends React.Component {
+
 	render() {
-		let { addButtonListener, inputListener, inputValue, keyPress } = this.props;
+		const {
+			addButtonListener, inputListener, inputValue, keyPress,
+		} = this.props;
 		return (
 			<div className="task-input">
 				<input
@@ -16,4 +19,5 @@ export default class TaskInput extends React.Component {
 			</div>
 		);
 	}
+
 }
