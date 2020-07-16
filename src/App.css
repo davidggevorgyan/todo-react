@@ -1,15 +1,14 @@
 .App {
 	text-align: center;
-}
-
-.App-header {
+	box-sizing: border-box;
 	min-height: 100vh;
 	font-size: calc(10px + 2vmin);
-	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
 }
 
 .task-input {
-	padding: 2rem;
+	padding: 2rem 2rem 1rem 2rem;
 	background-color: #282c34;
 	color: white;
 	display: flex;
@@ -48,4 +47,23 @@
 
 .done {
 	text-decoration: line-through;
+}
+
+.search {
+	padding: 0 2rem 1rem 2rem;
+	background-color: #282c34;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: nowrap;
+}
+
+.search button {
+	margin: 0 1rem;
+	background: none;
+	border: 0.1rem solid white;
+	border-radius: 0.6rem;
+	background-color: white;
 }

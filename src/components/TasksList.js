@@ -1,20 +1,21 @@
 import React from 'react';
 import TaskItem from './TaskItem.js';
 
-export default class TasksList extends React.Component {
-
-	render() {
-		const { tasks, markDoneListener, deleteListener } = this.props;
-		return tasks
-			.filter( ( task ) => !task.isDeleted )
-			.map( ( task ) => (
-				<TaskItem
-					key={task.text.slice( 0, 5 ) + task.id}
-					task={task}
-					markDoneListener={markDoneListener}
-					deleteListener={deleteListener}
-				/>
-			) );
-	}
-
+export default function TasksList( props ) {
+	const { tasks, markDoneListener, deleteListener } = props;
+	const wrapper = tasks
+		.filter( ( task ) => task.status !== 'Deleted' )
+		.map( ( task ) => (
+			<TaskItem
+				key={task.text.slice( 0, 5 ) + task.id}
+				task={task}
+				markDoneListener={markDoneListener}
+				deleteListener={deleteListener}
+			/>
+		) );
+	return (
+		<div className="tasks-list">
+			{wrapper}
+		</div>
+	);
 }

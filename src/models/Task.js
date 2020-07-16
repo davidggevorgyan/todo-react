@@ -1,6 +1,5 @@
 export default function Task( text, id ) {
 	this.id = id;
-	this.isDone = false;
-	this.isDeleted = false;
+	this.status = 'New';
 	this.text = text;
 }
