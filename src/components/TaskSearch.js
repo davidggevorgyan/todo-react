@@ -9,7 +9,7 @@ export default function TaskSearch( props ) {
 		<div className="search">
 			<div onClick={( e ) => filterListener( 'New, Done' )} className={ filter === 'New, Done' ? 'active' : '' } >All</div>
 			<div onClick={( e ) => filterListener( 'New' )} className={ filter === 'New' ? 'active' : '' }>Active</div>
-			<div onClick={( e ) => filterListener( 'Done' )} className={ filter === 'Done' ? 'active' : '' }>Completed</div>
+			<div onClick={( e ) => filterListener( 'Done' )} className={ filter === 'Done' ? 'active' : '' }>Done</div>
 			<input placeholder="Search Task" type="search" value={searchValue} onChange={searchListener}/>
 		</div>
 	);

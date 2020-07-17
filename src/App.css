@@ -60,6 +60,10 @@ header {
 	cursor: pointer;
 }
 
+.search > input {
+	min-width: 10rem;
+}
+
 .search > .active {
 	color: #282c34;
 	background-color: white;
