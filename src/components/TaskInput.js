@@ -5,7 +5,7 @@ export default function TaskInput( props ) {
 		addButtonListener, inputListener, inputValue, keyPress,
 	} = props;
 	return (
-		<header className="task-input">
+		<div className="task-input">
 			<input
 				type="text"
 				value={inputValue}
@@ -14,6 +14,6 @@ export default function TaskInput( props ) {
 				onKeyDown={keyPress}
 			></input>
 			<button onClick={addButtonListener}>Add</button>
-		</header>
+		</div>
 	);
 }

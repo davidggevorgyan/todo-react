@@ -23,7 +23,7 @@ export default class App extends React.Component {
 			],
 			inputValue: '',
 			searchValue: '',
-			activeFilter: 'All',
+			filter: 'New, Done',
 		};
 	}
 
@@ -44,8 +44,34 @@ export default class App extends React.Component {
 	};
 
 	searchListener = ( e ) => {
-		this.setState( { searchValue: e.target.value } );
-	};
+		const newList = this.state.tasks.map( ( task ) => {
+			const newTask = { ...task };
+			newTask.text.includes( e.target.value )
+				? newTask.isDisplayed = true
+				: newTask.isDisplayed = false;
+			return newTask;
+		} );
+		this.setState( {
+			tasks: newList,
+			filter: 'New, Done',
+			searchValue: e.target.value,
+		} );
+	}
+
+	filterListener = ( statusesToFilter ) => {
+		const newList = this.state.tasks.map( ( task ) => {
+			const newTask = { ...task };
+			statusesToFilter.includes( newTask.status )
+				? newTask.isDisplayed = true
+				: newTask.isDisplayed = false;
+			return newTask;
+		} );
+		this.setState( {
+			searchValue: '',
+			tasks: newList,
+			filter: statusesToFilter,
+		} );
+	}
 
 	markDoneListener = ( id ) => {
 		const newList = [...this.state.tasks];
@@ -63,21 +89,24 @@ export default class App extends React.Component {
 		return (
 			<ThemeContext.Provider theme="dark">
 				<div className="App">
-					<TaskInput
-						inputValue={this.state.inputValue}
-						addButtonListener={this.addButtonListener}
-						inputListener={this.inputListener}
-						keyPress={this.keyPress}
-					/>
-					<TaskSearch
-						activeFilter={this.state.activeFilter}
-						searchValue={this.searchValue}
-						searchListener={this.searchListener}
-					/>
+					<header>
+						<TaskInput
+							inputValue={this.state.inputValue}
+							addButtonListener={this.addButtonListener}
+							inputListener={this.inputListener}
+							keyPress={this.keyPress}
+						/>
+						<TaskSearch
+							filter={this.state.filter}
+							filterListener={this.filterListener}
+							searchValue={this.state.searchValue}
+							searchListener={this.searchListener}
+						/>
+					</header>
 					<TaskList
-						tasks={this.state.tasks}
 						markDoneListener={this.markDoneListener}
 						deleteListener={this.deleteListener}
+						tasks={this.state.tasks}
 					/>
 				</div>
 			</ThemeContext.Provider>
