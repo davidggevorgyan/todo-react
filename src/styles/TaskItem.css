@@ -1,0 +1,19 @@
+.list-item {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	border-bottom: 1px solid #9ba0aa42;
+	padding: 1rem 0;
+}
+
+.list-item input,
+.list-item button {
+	margin: 0 2rem;
+}
+
+.done {
+	text-decoration: line-through;
+}

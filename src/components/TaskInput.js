@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/TaskInput.css';
 
 export default function TaskInput( props ) {
 	const {

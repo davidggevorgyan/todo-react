@@ -1,31 +1,32 @@
 import React from 'react';
 import Task from './models/Task.js';
-import './App.css';
+import './styles/App.css';
 import TaskInput from './components/TaskInput.js';
 import TaskList from './components/TasksList.js';
 import TaskSearch from './components/TaskSearch.js';
 import ThemeContext from './contexts/ThemeContext.js';
+import {
+	DARK_BODY, LIGHT_BODY, DARK_HEADER, LIGHT_HEADER,
+} from './constants/colors.js';
 
 export default class App extends React.Component {
 
-	constructor( props ) {
-		super( props );
-		this.state = {
-			tasks: [
-				new Task(
-					'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, ullam!', // cspell:disable-line
-					0,
-				),
-				new Task(
-					'officiis quaerat quas quibusdam enim corporis et, accusamus molestias dolor est odit laboriosam delectus omnis voluptates vero aperiam sequi doloremque maxime laudantium perspiciatis inventore eaque. ', // cspell:disable-line
-					1,
-				),
-			],
-			inputValue: '',
-			searchValue: '',
-			filter: 'New, Done',
-		};
-	}
+	state = {
+		tasks: [
+			new Task(
+				'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, ullam!', // cspell:disable-line
+				0,
+			),
+			new Task(
+				'officiis quaerat quas quibusdam enim corporis et, accusamus molestias dolor est odit laboriosam delectus omnis voluptates vero aperiam sequi doloremque maxime laudantium perspiciatis inventore eaque. ', // cspell:disable-line
+				1,
+			),
+		],
+		inputValue: '',
+		searchValue: '',
+		filter: 'New, Done',
+		darkTheme: true,
+	};
 
 	addButtonListener = () => {
 		const newList = [...this.state.tasks];
@@ -85,11 +86,17 @@ export default class App extends React.Component {
 		this.setState( { tasks: newList } );
 	};
 
+	changeTheme = () => {
+		this.setState( {
+			darkTheme: !this.state.darkTheme,
+		} );
+	}
+
 	render() {
 		return (
-			<ThemeContext.Provider theme="dark">
-				<div className="App">
-					<header>
+			<ThemeContext.Provider value={this.state.darkTheme}>
+				<div className="App" style={this.state.darkTheme ? { backgroundColor: DARK_BODY } : { backgroundColor: LIGHT_BODY } }>
+					<header style={this.state.darkTheme ? { backgroundColor: DARK_HEADER } : LIGHT_HEADER }>
 						<TaskInput
 							inputValue={this.state.inputValue}
 							addButtonListener={this.addButtonListener}
@@ -101,6 +108,7 @@ export default class App extends React.Component {
 							filterListener={this.filterListener}
 							searchValue={this.state.searchValue}
 							searchListener={this.searchListener}
+							themeListener={this.changeTheme}
 						/>
 					</header>
 					<TaskList

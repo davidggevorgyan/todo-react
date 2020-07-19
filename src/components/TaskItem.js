@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/TaskItem.css';
 
 export default function TaskItem( props ) {
 	const { status, id, text } = props.task;

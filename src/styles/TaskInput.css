@@ -1,0 +1,20 @@
+.task-input {
+	padding: 2rem 2rem 1rem 2rem;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+}
+
+.task-input input {
+	width: 100%;
+	padding: 1rem;
+}
+
+.task-input button {
+	min-width: 10vh;
+	margin-left: 1rem;
+	padding: 1rem;
+}
