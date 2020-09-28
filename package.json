@@ -9,7 +9,7 @@
 		"@testing-library/user-event": "^7.2.1",
 		"eslint": "^6.6.0",
 		"eslint-config-airbnb-base": "^14.2.0",
-		"eslint-plugin-import": "^2.22.0",
+		"eslint-plugin-import": "^2.22.1",
 		"react": "^16.13.1",
 		"react-dark-mode-toggle": "0.0.9",
 		"react-dom": "^16.13.1",
