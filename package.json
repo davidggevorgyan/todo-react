@@ -12,7 +12,7 @@
 		"eslint-plugin-import": "^2.22.1",
 		"react": "^16.14.0",
 		"react-dark-mode-toggle": "0.0.10",
-		"react-dom": "^16.13.1",
+		"react-dom": "^16.14.0",
 		"react-scripts": "3.4.3"
 	},
 	"scripts": {
